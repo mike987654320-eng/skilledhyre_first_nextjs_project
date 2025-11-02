@@ -260,7 +260,7 @@ export default function Home() {
                 lineHeight: "1.6",
                 fontStyle: "italic"
               }}>
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: "0.25rem", color: "#111827" }}>
@@ -375,7 +375,7 @@ export default function Home() {
           marginBottom: "1rem",
           color: "#111827"
         }}>
-          Let's Talk About Your Software Project
+          Let&apos;s Talk About Your Software Project
         </h2>
         <p style={{ 
           color: "#6b7280",
@@ -405,7 +405,7 @@ export default function Home() {
             cursor: "pointer",
             fontWeight: 500
           }}>
-            Let's Talk!
+            Let&apos;s Talk!
           </button>
         </div>
       </section>
