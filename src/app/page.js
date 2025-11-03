@@ -99,12 +99,33 @@ export default function Home() {
           </div>
           <div
             style={{
-              marginTop: "2rem",
-              color: "#9ca3af",
-              fontSize: "0.875rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
             }}
           >
-            Clutch Rating
+            <img
+              src="https://picsum.photos/500/400?random=hero"
+              alt="Hero illustration"
+              style={{
+                width: "100%",
+                maxWidth: "500px",
+                height: "auto",
+                borderRadius: "1rem",
+                objectFit: "cover",
+              }}
+            />
+            <div
+              style={{
+                color: "#9ca3af",
+                fontSize: "0.875rem",
+                textAlign: "center",
+              }}
+            >
+              Clutch Rating
+            </div>
           </div>
         </section>
 
@@ -164,14 +185,14 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src=""
+                    src={`https://via.placeholder.com/100x60/4a5568/ffffff?text=Logo+${i + 1}`}
                     alt={`Logo ${i + 1}`}
                     style={{
                       maxWidth: "100%",
                       maxHeight: "100%",
                       width: "100px",
                       height: "60px",
-                      backgroundColor: "#e5e7eb",
+                      objectFit: "contain",
                     }}
                   />
                 </div>
@@ -193,14 +214,14 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src=""
+                    src={`https://via.placeholder.com/100x60/4a5568/ffffff?text=Logo+${i + 1}`}
                     alt={`Logo ${i + 1}`}
                     style={{
                       maxWidth: "100%",
                       maxHeight: "100%",
                       width: "100px",
                       height: "60px",
-                      backgroundColor: "#e5e7eb",
+                      objectFit: "contain",
                     }}
                   />
                 </div>
@@ -415,7 +436,7 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src=""
+                    src={`https://picsum.photos/400/200?random=${i}`}
                     alt={product.name}
                     style={{
                       width: "100%",
@@ -426,13 +447,13 @@ export default function Home() {
                   />
                   <div style={{ padding: "1.5rem" }}>
                     <img
-                      src=""
+                      src={`https://via.placeholder.com/120x40/2563eb/ffffff?text=${encodeURIComponent(product.name)}`}
                       alt={`${product.name} logo`}
                       style={{
                         marginBottom: "1rem",
                         width: "120px",
                         height: "40px",
-                        backgroundColor: "#f3f4f6",
+                        objectFit: "contain",
                       }}
                     />
                     <p style={{ color: "#6b7280", lineHeight: "1.6" }}>
@@ -541,23 +562,35 @@ export default function Home() {
                 >
                   &quot;{testimonial.quote}&quot;
                 </p>
-                <div>
-                  <div
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <img
+                    src={`https://i.pravatar.cc/60?img=${i + 10}`}
+                    alt={testimonial.author}
                     style={{
-                      fontWeight: 600,
-                      marginBottom: "0.25rem",
-                      color: "#ffffff",
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
                     }}
-                  >
-                    {testimonial.author}
-                  </div>
-                  <div
-                    style={{
-                      color: "rgb(189, 189, 193)",
-                      fontSize: "0.875rem",
-                    }}
-                  >
-                    {testimonial.role}
+                  />
+                  <div>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginBottom: "0.25rem",
+                        color: "#ffffff",
+                      }}
+                    >
+                      {testimonial.author}
+                    </div>
+                    <div
+                      style={{
+                        color: "rgb(189, 189, 193)",
+                        fontSize: "0.875rem",
+                      }}
+                    >
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -778,7 +811,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ textAlign: "right" , display: "flex", justifyContent: "center" , alignItems: "center" }}>
+          <div
+            style={{
+              textAlign: "right",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <button
               style={{
                 backgroundColor: "#1A1919",
