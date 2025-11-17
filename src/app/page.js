@@ -128,7 +128,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Trusted by Businesses Section */}
         <section
           style={{
@@ -185,8 +184,8 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src={`https://via.placeholder.com/100x60/4a5568/ffffff?text=Logo+${i + 1}`}
-                    alt={`Logo ${i + 1}`}
+                    src="https://via.placeholder.com/100x60/2563eb/ffffff?text=Company"
+                    alt="Company Logo"
                     style={{
                       maxWidth: "100%",
                       maxHeight: "100%",
@@ -210,12 +209,12 @@ export default function Home() {
                     alignItems: "center",
                     justifyContent: "center",
                     borderRadius: "0.5rem",
-                    border: "1px solid #e5e7eb",
+                    // border: "1px solid #e5e7eb",
                   }}
                 >
                   <img
-                    src={`https://via.placeholder.com/100x60/4a5568/ffffff?text=Logo+${i + 1}`}
-                    alt={`Logo ${i + 1}`}
+                    src="https://via.placeholder.com/100x60/2563eb/ffffff?text=Company"
+                    alt="Company Logo"
                     style={{
                       maxWidth: "100%",
                       maxHeight: "100%",
@@ -229,7 +228,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Our Capabilities Section */}
         <section
           style={{
@@ -361,7 +359,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
         {/* Portfolio Section */}
         <section
           style={{
@@ -447,7 +444,9 @@ export default function Home() {
                   />
                   <div style={{ padding: "1.5rem" }}>
                     <img
-                      src={`https://via.placeholder.com/120x40/2563eb/ffffff?text=${encodeURIComponent(product.name)}`}
+                      src={`https://via.placeholder.com/120x40/2563eb/ffffff?text=${encodeURIComponent(
+                        product.name
+                      )}`}
                       alt={`${product.name} logo`}
                       style={{
                         marginBottom: "1rem",
@@ -477,7 +476,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Testimonials Section */}
         <section
           style={{
@@ -562,7 +560,9 @@ export default function Home() {
                 >
                   &quot;{testimonial.quote}&quot;
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                >
                   <img
                     src={`https://i.pravatar.cc/60?img=${i + 10}`}
                     alt={testimonial.author}
@@ -609,7 +609,6 @@ export default function Home() {
             </a>
           </div>
         </section>
-
         {/* Working with Us Section */}
         <section
           style={{
@@ -703,8 +702,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Contact Section */}
+        a{/* Contact Section */}
         {/* <section
           style={{
             padding: "6rem 2rem",
@@ -770,7 +768,6 @@ export default function Home() {
             </button>
           </div>
         </section> */}
-
         <section
           style={{
             backgroundColor: "#232324",
