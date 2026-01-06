@@ -25,9 +25,8 @@ export async function connectToDatabase() {
         useUnifiedTopology: true,
       })
       .then((mongoose) => {
+        console.log("Connected to database");
 
-        console.log("Connected to database" , mongoose);
-        
         return mongoose;
       });
   }

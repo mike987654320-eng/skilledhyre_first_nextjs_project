@@ -1,31 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "TechStaunch - End to End Software Development Company",
-  description: "TechStaunch is an end-to-end software development company offering outcome driven solutions — from initial planning to final deployment.",
+  title: "SkilledHyre Labs | Engineering Digital Innovation",
+  description:
+    "SkilledHyre Labs is a full-fledged IT and AI engineering company delivering scalable software solutions, AI-powered platforms, and on-demand tech talent.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header />
-        {children}
+        <main className="flex-grow pt-20">{children}</main>
         <Footer />
       </body>
     </html>
