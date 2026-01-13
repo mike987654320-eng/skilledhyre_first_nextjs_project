@@ -10,6 +10,8 @@ import {
 } from "@heroicons/react/24/outline";
 import Section from "../../components/Section";
 import Card from "../../components/Card";
+import IndustryTabs from "../../components/IndustryTabs";
+import CounterItem from "../../components/CounterItem";
 
 export default function Industries() {
   const industries = [
@@ -79,6 +81,40 @@ export default function Industries() {
           {industries.map((ind, index) => (
             <Card key={index} {...ind} />
           ))}
+        </div>
+      </Section>
+
+      {/* Deep Dive Section */}
+      <Section>
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">Inside the Sectors</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+              Discover how we tackle specific challenges in your industry.
+            </p>
+          </div>
+          <IndustryTabs />
+        </div>
+      </Section>
+
+      {/* Impact Stats Section */}
+      <Section className="bg-white/5">
+        <div className="max-w-[1170px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">
+              Impact by the Numbers
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              { value: 500, label: "Mn+ Data Points Processed", suffix: "" },
+              { value: 40, label: "Efficiency Increase", suffix: "%" },
+              { value: 12, label: "Industries Transformed", suffix: "+" },
+              { value: 24, label: "h Support Coverage", suffix: "/7" },
+            ].map((stat, i) => (
+              <CounterItem key={i} {...stat} />
+            ))}
+          </div>
         </div>
       </Section>
     </>

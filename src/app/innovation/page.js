@@ -2,6 +2,8 @@ import { LightBulbIcon } from "@heroicons/react/24/outline";
 import Section from "../../components/Section";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
+import InnovationTimeline from "../../components/InnovationTimeline";
+import TechRadar from "../../components/TechRadar";
 
 export default function Innovation() {
   const focusAreas = [
@@ -58,7 +60,37 @@ export default function Innovation() {
             <Card key={index} {...area} />
           ))}
         </div>
+      </Section>
 
+      {/* Innovation Framework Section */}
+      <Section>
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">
+              The Innovation Framework
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+              How we turn abstract ideas into scalable market realities.
+            </p>
+          </div>
+          <InnovationTimeline />
+        </div>
+      </Section>
+
+      {/* Tech Radar Section */}
+      <Section className="bg-white/5">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">Our Technology Radar</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+              The technologies we are mastering today to build your tomorrow.
+            </p>
+          </div>
+          <TechRadar />
+        </div>
+      </Section>
+
+      <Section>
         <div className="mt-16 text-center bg-gradient-to-r from-indigo-900/20 to-purple-900/20 p-8 rounded-2xl border border-white/5">
           <h3 className="text-2xl font-bold mb-4">Why It Matters</h3>
           <p className="text-gray-300 mb-6">

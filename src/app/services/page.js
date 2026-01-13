@@ -9,6 +9,8 @@ import {
 import Section from "../../components/Section";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
+import ProcessTimeline from "../../components/ProcessTimeline";
+import ServiceToolkit from "../../components/ServiceToolkit";
 
 export default function Services() {
   const services = [
@@ -67,6 +69,31 @@ export default function Services() {
             <Card key={index} {...svc} />
           ))}
         </div>
+
+        {/* Development Timeline Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">How We Work</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+              A proven, agile process designed to deliver excellence at speed.
+            </p>
+          </div>
+          <ProcessTimeline />
+        </div>
+
+        {/* Tech Toolkit Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] font-bold mb-4">
+              The Full-Stack Toolkit
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+              We use the best tools for the job. No bloat, just performance.
+            </p>
+          </div>
+          <ServiceToolkit />
+        </div>
+
         <div className="text-center">
           <Button href="/contact">Build With Us</Button>
         </div>
