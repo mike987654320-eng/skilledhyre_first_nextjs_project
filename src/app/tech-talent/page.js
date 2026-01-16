@@ -5,9 +5,9 @@ import {
   BriefcaseIcon,
   ComputerDesktopIcon,
 } from "@heroicons/react/24/outline";
-import Section from "../../components/Section";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
+import Section from "../../components/common/Section";
+import Card from "../../components/common/Card";
+import Button from "../../components/common/Button";
 
 export default function TechTalent() {
   const roles = [

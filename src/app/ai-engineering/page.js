@@ -11,10 +11,10 @@ import {
   LockClosedIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
-import Section from "../../components/Section";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import TechStack from "../../components/TechStack";
+import Section from "../../components/common/Section";
+import Card from "../../components/common/Card";
+import Button from "../../components/common/Button";
+import TechStack from "../../components/ai-engineering/TechStack";
 
 export default function AIEngineering() {
   const process = [
@@ -31,24 +31,28 @@ export default function AIEngineering() {
       description:
         "AI chatbots, copilots, content generation systems, and enterprise knowledge assistants.",
       icon: SparklesIcon,
+      id: "generative-ai",
     },
     {
       title: "Predictive Analytics & Intelligence",
       description:
         "Forecasting, risk prediction, fraud detection, and behavioral analytics.",
       icon: PresentationChartLineIcon,
+      id: "predictive-analytics",
     },
     {
       title: "Machine Learning Solutions",
       description:
         "Recommendation engines, NLP solutions, computer vision, and personalization models.",
       icon: CpuChipIcon,
+      id: "machine-learning",
     },
     {
       title: "Intelligent Automation",
       description:
         "AI-driven workflow automation, decision engines, and smart operations.",
       icon: AdjustmentsHorizontalIcon,
+      id: "intelligent-automation",
     },
   ];
 

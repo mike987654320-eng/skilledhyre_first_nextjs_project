@@ -6,11 +6,11 @@ import {
   CloudIcon,
   BeakerIcon,
 } from "@heroicons/react/24/outline";
-import Section from "../../components/Section";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import ProcessTimeline from "../../components/ProcessTimeline";
-import ServiceToolkit from "../../components/ServiceToolkit";
+import Section from "../../components/common/Section";
+import Card from "../../components/common/Card";
+import Button from "../../components/common/Button";
+import ProcessTimeline from "../../components/services/ProcessTimeline";
+import ServiceToolkit from "../../components/services/ServiceToolkit";
 
 export default function Services() {
   const services = [
@@ -19,30 +19,35 @@ export default function Services() {
       description:
         "High-performance websites, CMS platforms, landing pages, and SEO-optimized experiences.",
       icon: GlobeAltIcon,
+      id: "website-development",
     },
     {
       title: "Custom Software Development",
       description:
         "Enterprise-grade applications, SaaS platforms, ERP/CRM systems, and automation tools.",
       icon: CodeBracketSquareIcon,
+      id: "custom-software",
     },
     {
       title: "Mobile App Development",
       description:
         "Android, iOS, and cross-platform apps built for scale and performance.",
       icon: DevicePhoneMobileIcon,
+      id: "mobile-app-development",
     },
     {
       title: "Cloud & DevOps",
       description:
         "Cloud architecture, CI/CD pipelines, migration, monitoring, and optimization.",
       icon: CloudIcon,
+      id: "cloud-devops",
     },
     {
       title: "Product Engineering & MVP",
       description:
         "Rapid MVP development, prototyping, and startup product engineering.",
       icon: BeakerIcon,
+      id: "product-engineering",
     },
   ];
 

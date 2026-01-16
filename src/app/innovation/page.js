@@ -1,9 +1,9 @@
 import { LightBulbIcon } from "@heroicons/react/24/outline";
-import Section from "../../components/Section";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import InnovationTimeline from "../../components/InnovationTimeline";
-import TechRadar from "../../components/TechRadar";
+import Section from "../../components/common/Section";
+import Card from "../../components/common/Card";
+import Button from "../../components/common/Button";
+import InnovationTimeline from "../../components/innovation/InnovationTimeline";
+import TechRadar from "../../components/innovation/TechRadar";
 
 export default function Innovation() {
   const focusAreas = [
@@ -12,27 +12,32 @@ export default function Innovation() {
       description:
         "Reimagining business processes with digital-first solutions.",
       icon: LightBulbIcon,
+      id: "digital-transformation",
     },
     {
       title: "AI-First Product Design",
       description:
         "Building products with AI at the core, not as an afterthought.",
       icon: LightBulbIcon,
+      id: "ai-product-design",
     },
     {
       title: "Cloud-Native Architecture",
       description: "Scalable, resilient, and manageable infrastructure.",
       icon: LightBulbIcon,
+      id: "cloud-architecture",
     },
     {
       title: "Automation & Intelligent Systems",
       description: "Streamlining operations with smart automation.",
       icon: LightBulbIcon,
+      id: "automation-intelligent-systems",
     },
     {
       title: "Emerging Technologies",
       description: "Leveraging GenAI, RPA, and IoT for competitive edge.",
       icon: LightBulbIcon,
+      id: "emerging-technologies",
     },
   ];
 

@@ -15,13 +15,13 @@ import {
   TruckIcon,
   MegaphoneIcon,
 } from "@heroicons/react/24/outline";
-import Section from "../components/Section";
-import Card from "../components/Card";
-import Button from "../components/Button";
-import TypingAnimation from "@/components/TypingAnimation";
-import CounterItem from "@/components/CounterItem";
-import TestimonialCard from "@/components/TestimonialCard";
-import BlogCard from "@/components/BlogCard";
+import Section from "../components/common/Section";
+import Card from "../components/common/Card";
+import Button from "../components/common/Button";
+import TypingAnimation from "@/components/common/TypingAnimation";
+import CounterItem from "@/components/common/CounterItem";
+import TestimonialCard from "@/components/home/TestimonialCard";
+import BlogCard from "@/components/home/BlogCard";
 
 export default function Home() {
   const cards = [

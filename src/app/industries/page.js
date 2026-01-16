@@ -8,10 +8,10 @@ import {
   TruckIcon,
   MegaphoneIcon,
 } from "@heroicons/react/24/outline";
-import Section from "../../components/Section";
-import Card from "../../components/Card";
-import IndustryTabs from "../../components/IndustryTabs";
-import CounterItem from "../../components/CounterItem";
+import Section from "../../components/common/Section";
+import Card from "../../components/common/Card";
+import IndustryTabs from "../../components/industries/IndustryTabs";
+import CounterItem from "../../components/common/CounterItem";
 
 export default function Industries() {
   const industries = [
@@ -20,42 +20,49 @@ export default function Industries() {
       description:
         "AI diagnostics, patient risk analytics, health assistants, and hospital intelligence systems.",
       icon: HeartIcon,
+      id: "healthcare",
     },
     {
       title: "FinTech & Banking",
       description:
         "Fraud detection, credit scoring, transaction monitoring, and compliance AI.",
       icon: BanknotesIcon,
+      id: "fintech-banking",
     },
     {
       title: "Retail & E-commerce",
       description:
         "Recommendation engines, demand forecasting, dynamic pricing, and personalization.",
       icon: ShoppingCartIcon,
+      id: "retail-ecommerce",
     },
     {
       title: "Manufacturing",
       description:
         "Predictive maintenance, quality inspection, and supply chain optimization.",
       icon: Cog6ToothIcon,
+      id: "manufacturing",
     },
     {
       title: "Education & EdTech",
       description:
         "AI tutors, adaptive learning platforms, and student analytics.",
       icon: AcademicCapIcon,
+      id: "education-edtech",
     },
     {
       title: "Logistics & Supply Chain",
       description:
         "Route optimization, inventory forecasting, and smart warehousing.",
       icon: TruckIcon,
+      id: "logistics-supply-chain",
     },
     {
       title: "Marketing & Media",
       description:
         "Marketing intelligence, content analytics, and campaign optimization.",
       icon: MegaphoneIcon,
+      id: "marketing-media",
     },
   ];
 

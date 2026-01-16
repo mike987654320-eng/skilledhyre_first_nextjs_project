@@ -4,9 +4,11 @@ export default function Card({
   icon: Icon,
   className = "",
   href,
+  id,
 }) {
   const CardContent = () => (
     <div
+      id={id}
       // className={`glass-panel p-8 rounded-2xl h-full transition-all duration-300 group hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/10 ${className}`}
       className={`p-8 h-full ${className} flex justify-center items-center flex-col`}
     >
