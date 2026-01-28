@@ -11,7 +11,8 @@ import {
 import Section from "../../components/common/Section";
 import Card from "../../components/common/Card";
 import IndustryTabs from "../../components/industries/IndustryTabs";
-import CounterItem from "../../components/common/CounterItem";
+import CounterItem from "@/components/common/CounterItem";
+// import CounterItem from "../../components/common/CounterItem";
 
 export default function Industries() {
   const industries = [

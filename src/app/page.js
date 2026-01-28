@@ -19,11 +19,36 @@ import Section from "../components/common/Section";
 import Card from "../components/common/Card";
 import Button from "../components/common/Button";
 import TypingAnimation from "@/components/common/TypingAnimation";
-import CounterItem from "@/components/common/CounterItem";
+// import CounterItem from "@/components/common/CounterItem";
 import TestimonialCard from "@/components/home/TestimonialCard";
 import BlogCard from "@/components/home/BlogCard";
+import CounterItem from "@/components/common/CounterItem";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [blogs, setBlogs] = useState([]);
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    // Fetch Blogs
+    fetch("/api/blogs")
+      .then((res) => {
+        if (res.ok) return res.json();
+        return [];
+      })
+      .then((data) => setBlogs(data))
+      .catch((err) => console.error("Error fetching blogs:", err));
+
+    // Fetch News
+    fetch("/api/news")
+      .then((res) => {
+        if (res.ok) return res.json();
+        return [];
+      })
+      .then((data) => setNews(data))
+      .catch((err) => console.error("Error fetching news:", err));
+  }, []);
+
   const cards = [
     {
       title: "AI Engineering & Solutions",
@@ -287,92 +312,21 @@ export default function Home() {
           </div>
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
-            {[
-              {
-                title: "The Future of AI in Enterprise Software",
-                date: "Oct 15, 2023",
-                excerpt:
-                  "Explore how artificial intelligence is reshaping the landscape of enterprise applications and automation.",
-                image:
-                  "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "future-of-ai",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-              {
-                title: "Top Web Development Trends for 2024",
-                date: "Sep 10, 2023",
-                excerpt:
-                  "Stay ahead of the curve with these emerging technologies and frameworks in web development.",
-                image:
-                  "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "web-dev-trends",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-
-              {
-                title: "Scaling Your MVP to a Product",
-                date: "Sep 28, 2023",
-                excerpt:
-                  "Key strategies and technical considerations for taking your Minimum Viable Product to a full-market release.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "scaling-mvp",
-              },
-            ].map((blog, i) => (
-              <BlogCard key={i} {...blog} />
+            {blogs.map((blog) => (
+              <BlogCard
+                key={blog._id}
+                title={blog.title}
+                date={new Date(blog.createdAt).toLocaleDateString()}
+                excerpt={blog.shortDescription}
+                image={blog.cardImage || "https://via.placeholder.com/300"}
+                slug={`/blogs/${blog._id}`}
+              />
             ))}
+            {blogs.length === 0 && (
+              <div className="w-full text-center text-gray-500">
+                No recent blogs
+              </div>
+            )}
           </div>
         </div>
       </Section>
@@ -388,86 +342,21 @@ export default function Home() {
           </div>
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
-            {[
-              {
-                title: "SkilledHyre Labs Expands to New York",
-                date: "Nov 05, 2023",
-                excerpt:
-                  "We are thrilled to announce the opening of our new office in NYC to better serve our East Coast clients.",
-                image:
-                  "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "nyc-expansion",
-              },
-              {
-                title: "Partnering with TechGiant for Cloud Solutions",
-                date: "Oct 22, 2023",
-                excerpt:
-                  "A strategic partnership to deliver enhanced cloud infrastructure services to our enterprise partners.",
-                image:
-                  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "techgiant-partnership",
-              },
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-              {
-                title: "Winning the 2023 Innovation Award",
-                date: "Oct 01, 2023",
-                excerpt:
-                  "SkilledHyre Labs has been recognized for excellence in AI implementation and digital transformation.",
-                image:
-                  "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                slug: "innovation-award",
-              },
-            ].map((news, i) => (
-              <BlogCard key={i} {...news} />
+            {news.map((item) => (
+              <BlogCard
+                key={item._id}
+                title={item.title}
+                date={new Date(item.createdAt).toLocaleDateString()}
+                excerpt={item.shortDescription}
+                image={item.cardImage || "https://via.placeholder.com/300"}
+                slug={`/news/${item._id}`}
+              />
             ))}
+            {news.length === 0 && (
+              <div className="w-full text-center text-gray-500">
+                No recent news
+              </div>
+            )}
           </div>
         </div>
       </Section>

@@ -15,13 +15,15 @@ export default function BlogCard({ title, date, excerpt, image, slug }) {
         />
       </div>
       <div className="p-6">
-        <p className="text-indigo-400 text-sm mb-2">{date}</p>
+        <p className="text-indigo-400 text-sm mb-2" suppressHydrationWarning>
+          {date}
+        </p>
         <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
           {title}
         </h3>
         <p className="text-gray-400 text-sm mb-6 line-clamp-2">{excerpt}</p>
         <Link
-          href={`/blog/${slug}`}
+          href={slug}
           className="inline-flex items-center text-white hover:text-indigo-400 transition-colors gap-2 text-sm font-medium"
         >
           Read Article <ArrowRightIcon className="w-4 h-4" />

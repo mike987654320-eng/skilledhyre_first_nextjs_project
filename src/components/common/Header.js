@@ -87,6 +87,8 @@ const navigation = [
       { name: "Marketing & Media", href: "/industries/marketing-media" },
     ],
   },
+  { name: "Blogs", href: "/blogs" },
+  { name: "News", href: "/news" },
 ];
 
 export default function Header() {

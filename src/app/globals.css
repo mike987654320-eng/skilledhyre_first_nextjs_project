@@ -13,6 +13,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  /* --color-background-color: "black"; */
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -24,7 +25,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, var(--primary-glow) 0%, transparent 25%),
     radial-gradient(circle at 85% 30%, var(--secondary-glow) 0%, transparent 25%);
 }

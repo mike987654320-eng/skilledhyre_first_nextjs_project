@@ -9,18 +9,28 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@excalidraw/excalidraw": "^0.18.0",
     "@heroicons/react": "^2.2.0",
+    "@lexical/code-shiki": "^0.39.0",
+    "@lexical/file": "^0.39.0",
+    "@lexical/react": "^0.39.0",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.26.2",
+    "lexical": "^0.39.0",
     "mongoose": "^8.19.2",
     "next": "15.5.9",
     "react": "19.1.0",
+    "react-day-picker": "^9.13.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "25.0.10",
+    "@types/react": "19.2.9",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "5.9.3"
   }
 }
