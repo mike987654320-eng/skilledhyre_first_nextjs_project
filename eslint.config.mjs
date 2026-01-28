@@ -24,9 +24,47 @@
 
 // export default eslintConfig;
 
+// import { dirname } from "path";
+// import { fileURLToPath } from "url";
+// import { FlatCompat } from "@eslint/eslintrc";
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+// });
+
+// const eslintConfig = [
+//   // Next.js core rules
+//   ...compat.extends("next/core-web-vitals"),
+
+//   // Custom overrides
+//   {
+//     rules: {
+//       "@next/next/no-img-element": "off",
+//     },
+//   },
+
+//   // Ignore files
+//   {
+//     ignores: [
+//       "node_modules/**",
+//       ".next/**",
+//       "out/**",
+//       "build/**",
+//       "next-env.d.ts",
+//     ],
+//   },
+// ];
+
+// export default eslintConfig;
+
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -36,17 +74,32 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  // Next.js core rules
+  // Next.js rules
   ...compat.extends("next/core-web-vitals"),
 
-  // Custom overrides
+  // TypeScript support
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsParser,
+    },
+    plugins: {
+      "@typescript-eslint": tseslint,
+    },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off", // allow any
+      "@typescript-eslint/no-unused-vars": "warn",
+    },
+  },
+
+  // Global overrides
   {
     rules: {
       "@next/next/no-img-element": "off",
     },
   },
 
-  // Ignore files
+  // Ignore folders
   {
     ignores: [
       "node_modules/**",
