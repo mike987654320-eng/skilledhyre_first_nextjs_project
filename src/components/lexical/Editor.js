@@ -575,16 +575,16 @@ function EditorHelper({ onChange, minimal = false, initialHtml }) {
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         {shouldAllowHighlightingWithBrackets && <SpecialTextPlugin />}
-        <ActionsPlugin
+        {/* <ActionsPlugin
           shouldPreserveNewLinesInMarkdown={shouldPreserveNewLinesInMarkdown}
           useCollabV2={useCollabV2}
-        />
+        /> */}
 
         {/* Add HTML display plugin */}
-        <HTMLDisplayPlugin onHTMLChange={handleHtmlChange} />
-        <HtmlHydrationPlugin initialHtml={initialHtml} />
+        {/* <HTMLDisplayPlugin onHTMLChange={handleHtmlChange} /> */}
+        {/* <HtmlHydrationPlugin initialHtml={initialHtml} /> */}
         {/* Display HTML output below editor only if not in minimal mode */}
-        {!minimal && (
+        {/* {!minimal && (
           <div
             style={{
               marginTop: "20px",
@@ -600,9 +600,9 @@ function EditorHelper({ onChange, minimal = false, initialHtml }) {
               <code>{htmlContent}</code>
             </pre>
           </div>
-        )}
+        )} */}
       </div>
-      {showTreeView && <TreeViewPlugin />}
+      {/* {showTreeView && <TreeViewPlugin />} */}
     </>
   );
 }

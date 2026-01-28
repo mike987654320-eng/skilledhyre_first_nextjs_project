@@ -67,7 +67,7 @@ async function sendEditorState(editor: LexicalEditor): Promise<void> {
 
 async function validateEditorState(editor: LexicalEditor): Promise<void> {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState());
-  let response = null;
+  let response: Response | null = null;
   try {
     response = await fetch("http://localhost:1235/validateEditorState", {
       body: stringifiedEditorState,

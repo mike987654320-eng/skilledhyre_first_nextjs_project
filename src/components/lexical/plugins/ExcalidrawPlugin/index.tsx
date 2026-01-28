@@ -5,14 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import type {ExcalidrawInitialElements} from '../../ui/ExcalidrawModal';
-import type {AppState, BinaryFiles} from '@excalidraw/excalidraw/types';
-import type {JSX} from 'react';
+// import type {ExcalidrawInitialElements} from '../../ui/ExcalidrawModal';
+import type { JSX } from "react";
 
-import '@excalidraw/excalidraw/index.css';
+import "@excalidraw/excalidraw/index.css";
 
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {$wrapNodeInElement} from '@lexical/utils';
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { $wrapNodeInElement } from "@lexical/utils";
 import {
   $createParagraphNode,
   $insertNodes,
@@ -20,17 +19,17 @@ import {
   COMMAND_PRIORITY_EDITOR,
   createCommand,
   LexicalCommand,
-} from 'lexical';
-import {useEffect, useState} from 'react';
+} from "lexical";
+import { useEffect, useState } from "react";
 
 import {
   $createExcalidrawNode,
   ExcalidrawNode,
-} from '../../nodes/ExcalidrawNode';
-import ExcalidrawModal from '../../ui/ExcalidrawModal';
+} from "../../nodes/ExcalidrawNode";
+import ExcalidrawModal from "../../ui/ExcalidrawModal";
 
 export const INSERT_EXCALIDRAW_COMMAND: LexicalCommand<void> = createCommand(
-  'INSERT_EXCALIDRAW_COMMAND',
+  "INSERT_EXCALIDRAW_COMMAND",
 );
 
 export default function ExcalidrawPlugin(): JSX.Element | null {
@@ -40,7 +39,7 @@ export default function ExcalidrawPlugin(): JSX.Element | null {
   useEffect(() => {
     if (!editor.hasNodes([ExcalidrawNode])) {
       throw new Error(
-        'ExcalidrawPlugin: ExcalidrawNode not registered on editor',
+        "ExcalidrawPlugin: ExcalidrawNode not registered on editor",
       );
     }
 
@@ -62,11 +61,7 @@ export default function ExcalidrawPlugin(): JSX.Element | null {
     setModalOpen(false);
   };
 
-  const onSave = (
-    elements: ExcalidrawInitialElements,
-    appState: Partial<AppState>,
-    files: BinaryFiles,
-  ) => {
+  const onSave = (elements: any, appState: any, files: any) => {
     editor.update(() => {
       const excalidrawNode = $createExcalidrawNode();
       excalidrawNode.setData(
@@ -87,7 +82,7 @@ export default function ExcalidrawPlugin(): JSX.Element | null {
   return isModalOpen ? (
     <ExcalidrawModal
       initialElements={[]}
-      initialAppState={{} as AppState}
+      initialAppState={{} as any}
       initialFiles={{}}
       isShown={isModalOpen}
       onDelete={onDelete}
