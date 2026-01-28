@@ -185,6 +185,7 @@ import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
+import sortKeysFix from "eslint-plugin-sort-keys-fix";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -202,7 +203,7 @@ const eslintConfig = [
     },
     plugins: {
       "@typescript-eslint": tseslint,
-      "sort-keys-fix": require("eslint-plugin-sort-keys-fix"),
+      "sort-keys-fix": sortKeysFix,
     },
     rules: {
       "@typescript-eslint/no-explicit-any": "off", // allow any
