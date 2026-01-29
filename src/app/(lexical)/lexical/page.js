@@ -5,7 +5,14 @@
 // }
 // //
 
-import Editor from "@/components/lexical/Editor";
+import dynamic from "next/dynamic";
+
+const Editor = dynamic(() => import("@/components/lexical/Editor"), {
+  ssr: false,
+  loading: () => (
+    <div className="editor-loading-state">Loading Lexical editor...</div>
+  ),
+});
 // import "@/components/lexical/styles.css";
 
 /* --------------------------2nd attempt at Lexical Editor-------------------------- */

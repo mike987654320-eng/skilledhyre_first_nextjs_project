@@ -91,7 +91,7 @@ export default function BlogDetailPage() {
         </h2>
         {/* Render the full concatenated content */}
         <div
-          className="bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[200px]"
+          className="p-6 rounded-lg border border-gray-200 min-h-[200px] text-black"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
       </div>

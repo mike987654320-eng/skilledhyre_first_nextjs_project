@@ -141,7 +141,6 @@ import { SelectionAlwaysOnDisplay } from "@lexical/react/LexicalSelectionAlwaysO
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
 import { useLexicalEditable } from "@lexical/react/useLexicalEditable";
-import { CAN_USE_DOM } from "@lexical/utils";
 import { useEffect, useMemo, useState } from "react";
 import { Doc } from "yjs";
 
@@ -411,6 +410,14 @@ function EditorHelper({ onChange, minimal = false, initialHtml }) {
   };
 
   useEffect(() => {
+    // Move CAN_USE_DOM import here to avoid SSR issues
+    let CAN_USE_DOM;
+    try {
+      // Dynamically require only on client
+      CAN_USE_DOM = require("@lexical/utils").CAN_USE_DOM;
+    } catch {
+      CAN_USE_DOM = false;
+    }
     const updateViewPortWidth = () => {
       if (typeof window === "undefined") return;
       const isNextSmallWidthViewport = window.matchMedia(
@@ -588,7 +595,7 @@ function EditorHelper({ onChange, minimal = false, initialHtml }) {
 
         {/* Add HTML display plugin */}
         {/* <HTMLDisplayPlugin onHTMLChange={handleHtmlChange} /> */}
-        {/* <HtmlHydrationPlugin initialHtml={initialHtml} /> */}
+        <HtmlHydrationPlugin initialHtml={initialHtml} />
         {/* Display HTML output below editor only if not in minimal mode */}
         {/* {!minimal && (
           <div
