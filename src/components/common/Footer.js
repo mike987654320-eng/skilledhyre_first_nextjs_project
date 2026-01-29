@@ -67,7 +67,7 @@ export default function Footer() {
                 SkilledHyre Labs
               </span> */}
               <img
-                src="/skilldhyre.jpg"
+                src="/logo_new.jpeg"
                 alt="Hero Image"
                 className="w-62 h-32 object-contain"
               />

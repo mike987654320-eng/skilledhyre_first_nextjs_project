@@ -140,9 +140,9 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <img
-                src="/skilldhyre.jpg"
+                src="/home_page_hero_section.jpeg"
                 alt="Hero Image"
-                className="w-full max-w-[520px] object-contain"
+                className="w-full max-w-[600px] object-contain"
               />
             </div>
           </div>

@@ -122,11 +122,11 @@ export default function Header() {
           <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
             <div className="flex items-center justify-center">
               <Image
-                src="/skilldhyre.jpg"
+                src="/logo_new.jpeg"
                 alt="SkilledHyre Labs Logo"
                 width={164}
-                height={76}
-                style={{ width: "164px", height: "76px" }}
+                height={106}
+                style={{ width: "150px", height: "130px" }}
               />
             </div>
           </Link>
