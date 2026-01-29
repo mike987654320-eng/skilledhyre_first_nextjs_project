@@ -6,14 +6,15 @@
  *
  */
 
-import type {JSX} from 'react';
+"use client";
+import type { JSX } from "react";
 
-import {CAN_USE_BEFORE_INPUT} from '@lexical/utils';
-import {useEffect, useMemo, useState} from 'react';
+import { CAN_USE_BEFORE_INPUT } from "@lexical/utils";
+import { useEffect, useMemo, useState } from "react";
 
-import {INITIAL_SETTINGS, isDevPlayground} from './appSettings';
-import {useSettings} from './context/SettingsContext';
-import Switch from './ui/Switch';
+import { INITIAL_SETTINGS, isDevPlayground } from "./appSettings";
+import { useSettings } from "./context/SettingsContext";
+import Switch from "./ui/Switch";
 
 export default function Settings(): JSX.Element {
   const windowLocation = window.location;
@@ -54,7 +55,7 @@ export default function Settings(): JSX.Element {
     const parentWindow = window.parent;
     const _search = windowLocation.search;
     const _isSplitScreen =
-      parentWindow && parentWindow.location.pathname === '/split/';
+      parentWindow && parentWindow.location.pathname === "/split/";
     return [_isSplitScreen, _search];
   }, [windowLocation]);
 
@@ -63,7 +64,7 @@ export default function Settings(): JSX.Element {
       <button
         id="options-button"
         data-test-id="options-button"
-        className={`editor-dev-button ${showSettings ? 'active' : ''}`}
+        className={`editor-dev-button ${showSettings ? "active" : ""}`}
         onClick={() => setShowSettings(!showSettings)}
       />
       {showSettings ? (
@@ -71,7 +72,7 @@ export default function Settings(): JSX.Element {
           {isRichText && isDevPlayground && (
             <Switch
               onClick={() => {
-                setOption('isCollab', !isCollab);
+                setOption("isCollab", !isCollab);
                 window.location.reload();
               }}
               checked={isCollab}
@@ -92,59 +93,59 @@ export default function Settings(): JSX.Element {
             />
           )}
           <Switch
-            onClick={() => setOption('measureTypingPerf', !measureTypingPerf)}
+            onClick={() => setOption("measureTypingPerf", !measureTypingPerf)}
             checked={measureTypingPerf}
             text="Measure Perf"
           />
           <Switch
-            onClick={() => setOption('showTreeView', !showTreeView)}
+            onClick={() => setOption("showTreeView", !showTreeView)}
             checked={showTreeView}
             text="Debug View"
           />
           <Switch
             onClick={() =>
-              setOption('showNestedEditorTreeView', !showNestedEditorTreeView)
+              setOption("showNestedEditorTreeView", !showNestedEditorTreeView)
             }
             checked={showNestedEditorTreeView}
             text="Nested Editors Debug View"
           />
           <Switch
             onClick={() => {
-              setOption('isRichText', !isRichText);
-              setOption('isCollab', false);
+              setOption("isRichText", !isRichText);
+              setOption("isCollab", false);
             }}
             checked={isRichText}
             text="Rich Text"
           />
           <Switch
             onClick={() => {
-              setOption('hasNestedTables', !hasNestedTables);
+              setOption("hasNestedTables", !hasNestedTables);
             }}
             checked={hasNestedTables}
             text="Nested Tables"
           />
           <Switch
-            onClick={() => setOption('isCharLimit', !isCharLimit)}
+            onClick={() => setOption("isCharLimit", !isCharLimit)}
             checked={isCharLimit}
             text="Char Limit"
           />
           <Switch
-            onClick={() => setOption('isCharLimitUtf8', !isCharLimitUtf8)}
+            onClick={() => setOption("isCharLimitUtf8", !isCharLimitUtf8)}
             checked={isCharLimitUtf8}
             text="Char Limit (UTF-8)"
           />
           <Switch
-            onClick={() => setOption('hasLinkAttributes', !hasLinkAttributes)}
+            onClick={() => setOption("hasLinkAttributes", !hasLinkAttributes)}
             checked={hasLinkAttributes}
             text="Link Attributes"
           />
           <Switch
-            onClick={() => setOption('isMaxLength', !isMaxLength)}
+            onClick={() => setOption("isMaxLength", !isMaxLength)}
             checked={isMaxLength}
             text="Max Length"
           />
           <Switch
-            onClick={() => setOption('isAutocomplete', !isAutocomplete)}
+            onClick={() => setOption("isAutocomplete", !isAutocomplete)}
             checked={isAutocomplete}
             text="Autocomplete"
           />
@@ -158,7 +159,7 @@ export default function Settings(): JSX.Element {
           /> */}
           <Switch
             onClick={() => {
-              setOption('showTableOfContents', !showTableOfContents);
+              setOption("showTableOfContents", !showTableOfContents);
             }}
             checked={showTableOfContents}
             text="Table Of Contents"
@@ -166,7 +167,7 @@ export default function Settings(): JSX.Element {
           <Switch
             onClick={() => {
               setOption(
-                'shouldUseLexicalContextMenu',
+                "shouldUseLexicalContextMenu",
                 !shouldUseLexicalContextMenu,
               );
             }}
@@ -176,7 +177,7 @@ export default function Settings(): JSX.Element {
           <Switch
             onClick={() => {
               setOption(
-                'shouldPreserveNewLinesInMarkdown',
+                "shouldPreserveNewLinesInMarkdown",
                 !shouldPreserveNewLinesInMarkdown,
               );
             }}
@@ -193,7 +194,7 @@ export default function Settings(): JSX.Element {
           <Switch
             onClick={() => {
               setOption(
-                'shouldAllowHighlightingWithBrackets',
+                "shouldAllowHighlightingWithBrackets",
                 !shouldAllowHighlightingWithBrackets,
               );
             }}
@@ -203,7 +204,7 @@ export default function Settings(): JSX.Element {
 
           <Switch
             onClick={() => {
-              setOption('selectionAlwaysOnDisplay', !selectionAlwaysOnDisplay);
+              setOption("selectionAlwaysOnDisplay", !selectionAlwaysOnDisplay);
             }}
             checked={selectionAlwaysOnDisplay}
             text="Retain selection"
@@ -211,7 +212,7 @@ export default function Settings(): JSX.Element {
 
           <Switch
             onClick={() => {
-              setOption('isCodeHighlighted', !isCodeHighlighted);
+              setOption("isCodeHighlighted", !isCodeHighlighted);
             }}
             checked={isCodeHighlighted}
             text="Enable Code Highlighting"
@@ -219,7 +220,7 @@ export default function Settings(): JSX.Element {
 
           <Switch
             onClick={() => {
-              setOption('isCodeShiki', !isCodeShiki);
+              setOption("isCodeShiki", !isCodeShiki);
             }}
             checked={isCodeShiki}
             text="Use Shiki for Code Highlighting"

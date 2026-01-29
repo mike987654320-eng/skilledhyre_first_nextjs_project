@@ -313,9 +313,9 @@ function $prepopulatedRichText() {
 
 const COLLAB_DOC_ID = "main";
 
-const skipCollaborationInit =
-  // @ts-expect-error
-  window.parent != null && window.parent.frames.right === window;
+// const skipCollaborationInit =
+//   // @ts-expect-error
+//   window.parent != null && window.parent.frames.right === window;
 
 import { $generateHtmlFromNodes, $generateNodesFromDOM } from "@lexical/html";
 import { $insertNodes } from "lexical";
