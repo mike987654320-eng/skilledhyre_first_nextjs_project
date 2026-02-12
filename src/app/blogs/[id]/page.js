@@ -108,13 +108,13 @@ export default function BlogDetailPage() {
               blog.sections.map((section, index) => (
                 <div
                   key={index}
-                  className="relative rounded-2xl border border-gray-200 
+                  className="relative  
                   
                    backdrop-blur-sm
                    p-6 md:p-8"
                 >
                   {/* Optional left accent */}
-                  <span className="absolute left-0 top-6 h-[calc(100%-3rem)] w-1  rounded-r" />
+                  {/* <span className="absolute left-0 top-6 h-[calc(100%-3rem)] w-1  rounded-r" /> */}
 
                   <div
                     className="max-w-none"

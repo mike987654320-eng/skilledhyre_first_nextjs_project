@@ -313,14 +313,18 @@ export default function Home() {
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
             {blogs.map((blog) => (
-              <BlogCard
+              <div
                 key={blog._id}
-                title={blog.title}
-                date={new Date(blog.createdAt).toLocaleDateString()}
-                excerpt={blog.shortDescription}
-                image={blog.cardImage || "https://via.placeholder.com/300"}
-                slug={`/blogs/${blog._id}`}
-              />
+                className="min-w-[350px] h-inherit flex flex-col"
+              >
+                <BlogCard
+                  title={blog.title}
+                  date={new Date(blog.createdAt).toLocaleDateString()}
+                  excerpt={blog.shortDescription}
+                  image={blog.cardImage || "https://via.placeholder.com/300"}
+                  slug={`/blogs/${blog._id}`}
+                />
+              </div>
             ))}
             {blogs.length === 0 && (
               <div className="w-full text-center text-gray-500">
@@ -343,14 +347,18 @@ export default function Home() {
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
             {news.map((item) => (
-              <BlogCard
+              <div
                 key={item._id}
-                title={item.title}
-                date={new Date(item.createdAt).toLocaleDateString()}
-                excerpt={item.shortDescription}
-                image={item.cardImage || "https://via.placeholder.com/300"}
-                slug={`/news/${item._id}`}
-              />
+                className="min-w-[350px] h-inherit flex flex-col"
+              >
+                <BlogCard
+                  title={item.title}
+                  date={new Date(item.createdAt).toLocaleDateString()}
+                  excerpt={item.shortDescription}
+                  image={item.cardImage || "https://via.placeholder.com/300"}
+                  slug={`/news/${item._id}`}
+                />
+              </div>
             ))}
             {news.length === 0 && (
               <div className="w-full text-center text-gray-500">

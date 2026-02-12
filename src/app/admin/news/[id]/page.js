@@ -34,6 +34,24 @@ export default function NewsDetailPage() {
     fetchNewsItem();
   }, [id]);
 
+  const handleDelete = async () => {
+    if (confirm("Are you sure you want to delete this news item?")) {
+      try {
+        const res = await fetch(`/api/news/${id}`, {
+          method: "DELETE",
+        });
+
+        if (res.ok) {
+          router.push("/admin/news");
+        } else {
+          console.error("Failed to delete news item");
+        }
+      } catch (error) {
+        console.error("Error deleting news item:", error);
+      }
+    }
+  };
+
   if (isLoading) return <div className="p-8">Loading...</div>;
   if (!newsItem) return <div className="p-8">News item not found</div>;
 
@@ -49,12 +67,20 @@ export default function NewsDetailPage() {
             Updated: {new Date(newsItem.updatedAt).toLocaleDateString()}
           </p>
         </div>
-        <Link
-          href={`/admin/news/${id}/edit`}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-        >
-          Update
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href={`/admin/news/${id}/edit`}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+          >
+            Update
+          </Link>
+          <button
+            onClick={handleDelete}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+          >
+            Delete
+          </button>
+        </div>
       </div>
 
       <div className="mb-8">

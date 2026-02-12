@@ -87,10 +87,28 @@ export default function NewsDetailPage() {
           )}
 
           {/* Content */}
-          <div
+          {/* <div
             className="prose prose-invert prose-lg max-w-none prose-indigo prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-a:text-indigo-400 hover:prose-a:text-indigo-300"
             dangerouslySetInnerHTML={{ __html: news.content }}
-          />
+          /> */}
+          <div className="space-y-10">
+            {news?.sections &&
+              Array.isArray(news.sections) &&
+              news.sections.map((section, index) => (
+                <div
+                  key={index}
+                  className="relative backdrop-blur-sm p-6 md:p-8"
+                >
+                  {/* Optional left accent */}
+                  {/* <span className="absolute left-0 top-6 h-[calc(100%-3rem)] w-1  rounded-r" /> */}
+
+                  <div
+                    className="max-w-none"
+                    dangerouslySetInnerHTML={{ __html: section.html }}
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       </Section>
     </article>

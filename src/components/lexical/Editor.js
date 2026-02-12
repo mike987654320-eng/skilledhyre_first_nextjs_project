@@ -685,9 +685,9 @@ export default function Editor({ onChange, minimal = false, initialHtml }) {
                 />
               </div>
               {!minimal && <Settings />}
-              {isDevPlayground ? <DocsPlugin /> : null}
-              {isDevPlayground ? <PasteLogPlugin /> : null}
-              {isDevPlayground ? <TestRecorderPlugin /> : null}
+              {/* {isDevPlayground ? <DocsPlugin /> : null} */}
+              {/* {isDevPlayground ? <PasteLogPlugin /> : null} */}
+              {/* {isDevPlayground ? <TestRecorderPlugin /> : null} */}
 
               {measureTypingPerf ? <TypingPerfPlugin /> : null}
             </ToolbarContext>
