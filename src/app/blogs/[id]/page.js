@@ -110,8 +110,11 @@ export default function BlogDetailPage() {
                   key={index}
                   className="relative  
                   
-                   backdrop-blur-sm
-                   p-6 md:p-8"
+                   backdrop-blur-sm"
+                  style={{
+                    padding: "0 0 0 5%",
+                    margin: 0,
+                  }}
                 >
                   {/* Optional left accent */}
                   {/* <span className="absolute left-0 top-6 h-[calc(100%-3rem)] w-1  rounded-r" /> */}
