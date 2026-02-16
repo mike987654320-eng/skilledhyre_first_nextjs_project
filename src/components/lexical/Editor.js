@@ -594,7 +594,7 @@ function EditorHelper({ onChange, minimal = false, initialHtml }) {
         /> */}
 
         {/* Add HTML display plugin */}
-        {/* <HTMLDisplayPlugin onHTMLChange={handleHtmlChange} /> */}
+        <HTMLDisplayPlugin onHTMLChange={handleHtmlChange} />
         <HtmlHydrationPlugin initialHtml={initialHtml} />
         {/* Display HTML output below editor only if not in minimal mode */}
         {/* {!minimal && (
