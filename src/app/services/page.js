@@ -20,6 +20,7 @@ export default function Services() {
         "High-performance websites, CMS platforms, landing pages, and SEO-optimized experiences.",
       icon: GlobeAltIcon,
       id: "website-development",
+      href: "/services/website-development",
     },
     {
       title: "Custom Software Development",
@@ -27,6 +28,7 @@ export default function Services() {
         "Enterprise-grade applications, SaaS platforms, ERP/CRM systems, and automation tools.",
       icon: CodeBracketSquareIcon,
       id: "custom-software",
+      href: "/services/custom-software",
     },
     {
       title: "Mobile App Development",
@@ -34,6 +36,7 @@ export default function Services() {
         "Android, iOS, and cross-platform apps built for scale and performance.",
       icon: DevicePhoneMobileIcon,
       id: "mobile-app-development",
+      href: "/services/mobile-app-development",
     },
     {
       title: "Cloud & DevOps",
@@ -41,6 +44,7 @@ export default function Services() {
         "Cloud architecture, CI/CD pipelines, migration, monitoring, and optimization.",
       icon: CloudIcon,
       id: "cloud-devops",
+      href: "/services/cloud-devops",
     },
     {
       title: "Product Engineering & MVP",
@@ -48,6 +52,7 @@ export default function Services() {
         "Rapid MVP development, prototyping, and startup product engineering.",
       icon: BeakerIcon,
       id: "product-engineering",
+      href: "/services/product-engineering",
     },
   ];
 

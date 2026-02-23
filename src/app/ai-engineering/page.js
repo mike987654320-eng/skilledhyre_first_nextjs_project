@@ -32,6 +32,7 @@ export default function AIEngineering() {
         "AI chatbots, copilots, content generation systems, and enterprise knowledge assistants.",
       icon: SparklesIcon,
       id: "generative-ai",
+      href: "/ai-engineering/generative-ai",
     },
     {
       title: "Predictive Analytics & Intelligence",
@@ -39,6 +40,7 @@ export default function AIEngineering() {
         "Forecasting, risk prediction, fraud detection, and behavioral analytics.",
       icon: PresentationChartLineIcon,
       id: "predictive-analytics",
+      href: "/ai-engineering/predictive-analytics",
     },
     {
       title: "Machine Learning Solutions",
@@ -46,6 +48,7 @@ export default function AIEngineering() {
         "Recommendation engines, NLP solutions, computer vision, and personalization models.",
       icon: CpuChipIcon,
       id: "machine-learning",
+      href: "/ai-engineering/machine-learning",
     },
     {
       title: "Intelligent Automation",
@@ -53,6 +56,7 @@ export default function AIEngineering() {
         "AI-driven workflow automation, decision engines, and smart operations.",
       icon: AdjustmentsHorizontalIcon,
       id: "intelligent-automation",
+      href: "/ai-engineering/intelligent-automation",
     },
   ];
 

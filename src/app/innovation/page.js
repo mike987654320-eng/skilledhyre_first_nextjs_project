@@ -13,6 +13,7 @@ export default function Innovation() {
         "Reimagining business processes with digital-first solutions.",
       icon: LightBulbIcon,
       id: "digital-transformation",
+      href: "/innovation/digital-transformation",
     },
     {
       title: "AI-First Product Design",
@@ -20,24 +21,28 @@ export default function Innovation() {
         "Building products with AI at the core, not as an afterthought.",
       icon: LightBulbIcon,
       id: "ai-product-design",
+      href: "/innovation/ai-product-design",
     },
     {
       title: "Cloud-Native Architecture",
       description: "Scalable, resilient, and manageable infrastructure.",
       icon: LightBulbIcon,
       id: "cloud-architecture",
+      href: "/innovation/cloud-architecture",
     },
     {
       title: "Automation & Intelligent Systems",
       description: "Streamlining operations with smart automation.",
       icon: LightBulbIcon,
       id: "automation-intelligent-systems",
+      href: "/innovation/automation-intelligent-systems",
     },
     {
       title: "Emerging Technologies",
       description: "Leveraging GenAI, RPA, and IoT for competitive edge.",
       icon: LightBulbIcon,
       id: "emerging-technologies",
+      href: "/innovation/emerging-technologies",
     },
   ];
 

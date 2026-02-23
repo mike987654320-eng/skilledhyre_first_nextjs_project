@@ -22,6 +22,7 @@ export default function Industries() {
         "AI diagnostics, patient risk analytics, health assistants, and hospital intelligence systems.",
       icon: HeartIcon,
       id: "healthcare",
+      href: "/industries/healthcare",
     },
     {
       title: "FinTech & Banking",
@@ -29,6 +30,7 @@ export default function Industries() {
         "Fraud detection, credit scoring, transaction monitoring, and compliance AI.",
       icon: BanknotesIcon,
       id: "fintech-banking",
+      href: "/industries/fintech-banking",
     },
     {
       title: "Retail & E-commerce",
@@ -36,6 +38,7 @@ export default function Industries() {
         "Recommendation engines, demand forecasting, dynamic pricing, and personalization.",
       icon: ShoppingCartIcon,
       id: "retail-ecommerce",
+      href: "/industries/retail-ecommerce",
     },
     {
       title: "Manufacturing",
@@ -43,6 +46,7 @@ export default function Industries() {
         "Predictive maintenance, quality inspection, and supply chain optimization.",
       icon: Cog6ToothIcon,
       id: "manufacturing",
+      href: "/industries/manufacturing",
     },
     {
       title: "Education & EdTech",
@@ -50,6 +54,7 @@ export default function Industries() {
         "AI tutors, adaptive learning platforms, and student analytics.",
       icon: AcademicCapIcon,
       id: "education-edtech",
+      href: "/industries/education-edtech",
     },
     {
       title: "Logistics & Supply Chain",
@@ -57,6 +62,7 @@ export default function Industries() {
         "Route optimization, inventory forecasting, and smart warehousing.",
       icon: TruckIcon,
       id: "logistics-supply-chain",
+      href: "/industries/logistics-supply-chain",
     },
     {
       title: "Marketing & Media",
@@ -64,6 +70,7 @@ export default function Industries() {
         "Marketing intelligence, content analytics, and campaign optimization.",
       icon: MegaphoneIcon,
       id: "marketing-media",
+      href: "/industries/marketing-media",
     },
   ];
 
