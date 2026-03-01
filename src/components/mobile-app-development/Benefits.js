@@ -1,0 +1,52 @@
+import Section from "../common/Section";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
+
+export default function Benefits() {
+  const benefits = [
+    {
+      title: "Enhanced User Engagement",
+      description: "Deliver personalized and interactive mobile experiences.",
+    },
+    {
+      title: "Faster Time-to-Market",
+      description: "Agile development cycles accelerate product launch.",
+    },
+    {
+      title: "Revenue Growth",
+      description:
+        "Monetization strategies including subscriptions and purchases.",
+    },
+    {
+      title: "Data-Driven Insights",
+      description: "Integrated analytics for real-time performance tracking.",
+    },
+    {
+      title: "Competitive Advantage",
+      description: "Innovative platforms that differentiate your brand.",
+    },
+  ];
+
+  return (
+    <Section className="bg-white/5">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <h2 className="text-[36px] font-bold mb-12 text-center">
+          🌟 Business Benefits
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors"
+            >
+              <CheckCircleIcon className="w-8 h-8 text-purple-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-gray-400 text-sm">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}

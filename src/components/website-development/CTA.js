@@ -1,0 +1,26 @@
+import Section from "../common/Section";
+import Button from "../common/Button";
+
+export default function CTA() {
+  return (
+    <Section className="text-center">
+      <div className="max-w-4xl mx-auto p-12 rounded-3xl bg-gradient-to-br from-cyan-600/20 to-blue-700/20 border border-cyan-500/30">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          🚀 Launch Your Digital Success
+        </h2>
+        <p className="text-xl text-gray-300 mb-10">
+          Your website should reflect your ambition and innovation. Design
+          smarter. Develop stronger. Grow faster.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button href="/contact" variant="primary">
+            Start Your Project
+          </Button>
+          <Button href="/services" variant="secondary">
+            Other Services
+          </Button>
+        </div>
+      </div>
+    </Section>
+  );
+}
