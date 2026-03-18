@@ -14,6 +14,11 @@ import {
   AcademicCapIcon,
   TruckIcon,
   MegaphoneIcon,
+  BuildingOfficeIcon,
+  BriefcaseIcon,
+  ShieldCheckIcon,
+  BuildingStorefrontIcon,
+  GlobeAmericasIcon,
 } from "@heroicons/react/24/outline";
 import Section from "../components/common/Section";
 import Card from "../components/common/Card";
@@ -89,6 +94,20 @@ export default function Home() {
       description: "Complete lifecycle support from strategy to scale.",
       icon: ArrowPathIcon,
       href: "/end-to-end",
+    },
+    {
+      title: "ERP Solutions",
+      description:
+        "Build scalable ERP systems to streamline enterprise operations.",
+      icon: Cog6ToothIcon,
+      href: "/services/erp",
+    },
+    {
+      title: "SAP Consulting",
+      description:
+        "Connect your enterprise systems with intelligent SAP solutions.",
+      icon: UsersIcon,
+      href: "/services/sap-consulting",
     },
   ];
 
@@ -184,42 +203,84 @@ export default function Home() {
                 description:
                   "AI diagnostics, patient risk analytics, health assistants, and hospital intelligence systems.",
                 icon: HeartIcon,
+                href: "/industries/healthcare",
               },
               {
                 title: "FinTech & Banking",
                 description:
                   "Fraud detection, credit scoring, transaction monitoring, and compliance AI.",
                 icon: BanknotesIcon,
+                href: "/industries/fintech-banking",
               },
               {
                 title: "Retail & E-commerce",
                 description:
                   "Recommendation engines, demand forecasting, dynamic pricing, and personalization.",
                 icon: ShoppingCartIcon,
+                href: "/industries/retail-ecommerce",
               },
               {
                 title: "Manufacturing",
                 description:
                   "Predictive maintenance, quality inspection, and supply chain optimization.",
                 icon: Cog6ToothIcon,
+                href: "/industries/manufacturing",
               },
               {
                 title: "Education & EdTech",
                 description:
                   "AI tutors, adaptive learning platforms, and student analytics.",
                 icon: AcademicCapIcon,
+                href: "/industries/education-edtech",
               },
               {
                 title: "Logistics & Supply Chain",
                 description:
                   "Route optimization, inventory forecasting, and smart warehousing.",
                 icon: TruckIcon,
+                href: "/industries/logistics-supply-chain",
               },
               {
                 title: "Marketing & Media",
                 description:
                   "Marketing intelligence, content analytics, and campaign optimization.",
                 icon: MegaphoneIcon,
+                href: "/industries/marketing-media",
+              },
+              {
+                title: "Travel & Tourism",
+                description:
+                  "Dynamic booking systems, personalized travel recommendations, and operational analytics.",
+                icon: GlobeAmericasIcon,
+                href: "/industries/travel-tourism",
+              },
+              {
+                title: "Real Estate",
+                description:
+                  "Property valuation models, smart building analytics, and automated lead generation.",
+                icon: BuildingOfficeIcon,
+                href: "/industries/real-estate",
+              },
+              {
+                title: "HR & Recruitment",
+                description:
+                  "Resume parsing, candidate matching, and intelligent employee engagement platforms.",
+                icon: BriefcaseIcon,
+                href: "/industries/hr-recruitment",
+              },
+              {
+                title: "Insurance",
+                description:
+                  "Automated claims processing, risk profiling, and personalized policy recommendations.",
+                icon: ShieldCheckIcon,
+                href: "/industries/insurance",
+              },
+              {
+                title: "Food & Restaurant",
+                description:
+                  "Smart inventory management, customer preference analytics, and delivery optimization.",
+                icon: BuildingStorefrontIcon,
+                href: "/industries/food-restaurant",
               },
             ].map((ind, index) => (
               <Card key={index} {...ind} />
