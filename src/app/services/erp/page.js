@@ -23,26 +23,31 @@ export default function page() {
             title: "Custom ERP Software Development",
             description:
               "Custom ERP architecture design, Enterprise workflow automation, Modular ERP system development.",
+            icon: "Square3Stack3DIcon",
           },
           {
             title: "ERP Module Development",
             description:
               "Finance & accounting, Inventory, Procurement, HRM, CRM. Centralize operations across departments.",
+            icon: "PuzzlePieceIcon",
           },
           {
             title: "ERP Integration Services",
             description:
               "API-based connectivity, CRM and ERP integration, Payment gateway integration, Data synchronization.",
+            icon: "ArrowsRightLeftIcon",
           },
           {
             title: "ERP System Modernization",
             description:
               "Legacy system migration, Workflow automation, UI/UX modernization for enterprise applications.",
+            icon: "CpuChipIcon",
           },
           {
             title: "ERP Support & Maintenance",
             description:
               "System monitoring, Bug fixes, Database optimization, Security enhancements, Continuous support.",
+            icon: "LifebuoyIcon",
           },
         ],
       },
@@ -52,22 +57,27 @@ export default function page() {
           {
             title: "Centralized Management",
             description: "Centralized management of business operations.",
+            icon: "CubeIcon",
           },
           {
             title: "Improved Visibility",
             description: "Improved data visibility and reporting.",
+            icon: "EyeIcon",
           },
           {
             title: "Automated Workflows",
             description: "Automated workflows and reduced manual processes.",
+            icon: "Cog6ToothIcon",
           },
           {
             title: "Enhanced Collaboration",
             description: "Enhanced collaboration across departments.",
+            icon: "UserGroupIcon",
           },
           {
             title: "Scalable Infrastructure",
             description: "Scalable infrastructure for growing enterprises.",
+            icon: "ChartBarIcon",
           },
         ],
       },
@@ -76,12 +86,12 @@ export default function page() {
         description:
           "We design ERP systems that align with the operational requirements of each industry.",
         items: [
-          { title: "Manufacturing" },
-          { title: "Retail & E-commerce" },
-          { title: "Healthcare" },
-          { title: "Logistics & Supply Chain" },
-          { title: "Finance & Banking" },
-          { title: "Technology & IT services" },
+          { title: "Manufacturing", icon: "ShieldCheckIcon" },
+          { title: "Retail & E-commerce", icon: "ShieldCheckIcon" },
+          { title: "Healthcare", icon: "ShieldCheckIcon" },
+          { title: "Logistics & Supply Chain", icon: "ShieldCheckIcon" },
+          { title: "Finance & Banking", icon: "ShieldCheckIcon" },
+          { title: "Technology & IT services", icon: "ShieldCheckIcon" },
         ],
       },
     ],

@@ -21,13 +21,13 @@ const footerNavigation = {
     { name: "Real Estate", href: "/industries/real-estate" },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms & Conditions", href: "/terms" },
   ],
   social: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/SkilledhyreLabs",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -40,7 +40,7 @@ const footerNavigation = {
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/skilledhyrelabs/",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -53,7 +53,7 @@ const footerNavigation = {
     },
     {
       name: "YouTube",
-      href: "#",
+      href: "https://www.youtube.com/@SKILLEDHYRELABS",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -66,7 +66,7 @@ const footerNavigation = {
     },
     {
       name: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/company/skilledhyrelabs/?viewAsMember=true",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -114,7 +114,9 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-500 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer text-gray-500 hover:text-white transition-colors"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />

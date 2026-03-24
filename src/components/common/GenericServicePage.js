@@ -1,6 +1,7 @@
-"use client";
 import React from "react";
 import Section from "./Section";
+import * as Icons from "@heroicons/react/24/outline";
+import Card from "./Card";
 
 export default function GenericServicePage({ content }) {
   const { category, title, descriptions, sections, cta } = content;
@@ -40,9 +41,10 @@ export default function GenericServicePage({ content }) {
       {sections?.map((section, idx) => (
         <Section
           key={idx}
+          id={section.id}
           className={idx % 2 === 0 ? "bg-[#0B0F19]" : "bg-transparent"}
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               {section.title}
             </h2>
@@ -55,22 +57,64 @@ export default function GenericServicePage({ content }) {
             <div
               className={`grid grid-cols-1 ${section.items.length === 1 ? "md:grid-cols-1 max-w-2xl mx-auto" : "md:grid-cols-2 lg:grid-cols-3"} gap-6 mt-8`}
             >
-              {section.items.map((item, itemIdx) => (
-                <div
-                  key={itemIdx}
-                  className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <h4 className="text-xl font-semibold text-white mb-3 flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>
-                    {item.title}
-                  </h4>
-                  {item.description && (
-                    <p className="text-gray-400 text-sm leading-relaxed pl-5">
-                      {item.description}
-                    </p>
-                  )}
-                </div>
-              ))}
+              {section.items.map((item, itemIdx) => {
+                const IconComponent =
+                  typeof item.icon === "string" ? Icons[item.icon] : item.icon;
+
+                if (!item.description)
+                  return (
+                    // <div className="grid md:grid-cols-3 gap-8">
+                    // {integrations.map((item, index) => (
+                    <div
+                      key={itemIdx}
+                      className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all"
+                    >
+                      <div className="mb-4 inline-block p-3 rounded-xl bg-indigo-500/10">
+                        {/* <item.icon className="w-8 h-8 text-indigo-400" /> */}
+                        <IconComponent className="w-8 h-8 text-indigo-500 shrink-0" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white">
+                        {item.title}
+                      </h3>
+                    </div>
+                    // ))}
+                    // </div>
+                  );
+
+                if (item.description)
+                  return (
+                    <Card
+                      key={itemIdx}
+                      title={item.title}
+                      description={item.description}
+                      icon={item.icon_2}
+                      // icon={
+                      //   <IconComponent className="w-8 h-8 text-indigo-500 shrink-0" />
+                      // }
+                      className="bg-white/5 border-white/10"
+                    />
+                  );
+                return (
+                  <div
+                    key={itemIdx}
+                    className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <h4 className="text-xl font-semibold text-white mb-3 flex items-center gap-3">
+                      {IconComponent ? (
+                        <IconComponent className="w-6 h-6 text-indigo-500 shrink-0" />
+                      ) : (
+                        <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>
+                      )}
+                      {item.title}
+                    </h4>
+                    {item.description && (
+                      <p className="text-gray-400 text-sm leading-relaxed pl-5">
+                        {item.description}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Section>

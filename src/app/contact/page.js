@@ -39,7 +39,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Email</h4>
-                    <p className="text-gray-400">hello@skilledhyrelabs.com</p>
+                    <p className="text-gray-400">team.skilledhyre@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -48,7 +48,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Phone</h4>
-                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                    <p className="text-gray-400">+91 7070633784</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -58,7 +58,8 @@ export default function Contact() {
                   <div>
                     <h4 className="text-white font-semibold">Office</h4>
                     <p className="text-gray-400">
-                      123 Tech Avenue, Silicon Valley, CA
+                      Tower - A, Office No, i-Thum, 602 Sector 62, Noida, Uttar
+                      Pradesh 201309
                     </p>
                   </div>
                 </div>

@@ -69,19 +69,37 @@ const navigation = [
       { name: "Cloud & DevOps", href: "/services/cloud-devops" },
       { name: "Product Engineering", href: "/services/product-engineering" },
       { name: "ERP", href: "/services/erp" },
-      { name: "SAP Implementation", href: "/services/sap-implementation" },
-      { name: "SAP Migration", href: "/services/sap-migration" },
-      { name: "SAP Integration", href: "/services/sap-integration" },
       {
-        name: "SAP Support & Maintenance",
-        href: "/services/sap-support-maintenance",
+        name: "SAP Consulting",
+        href: "/services/sap-consulting",
+        children: [
+          {
+            name: "SAP Strategy & Consulting",
+            href: "/services/sap-consulting#consulting",
+          },
+          {
+            name: "SAP Implementation",
+            href: "/services/sap-consulting#implementation",
+          },
+          { name: "SAP Migration", href: "/services/sap-consulting#migration" },
+          {
+            name: "SAP Custom Development",
+            href: "/services/sap-consulting#custom-development",
+          },
+          {
+            name: "SAP Integration",
+            href: "/services/sap-consulting#integration",
+          },
+          {
+            name: "SAP Cloud Solutions",
+            href: "/services/sap-consulting#cloud-solutions",
+          },
+          {
+            name: "SAP Support & Maintenance",
+            href: "/services/sap-consulting#support-maintenance",
+          },
+        ],
       },
-      {
-        name: "SAP Custom Development",
-        href: "/services/sap-custom-development",
-      },
-      { name: "SAP Cloud Solutions", href: "/services/sap-cloud-solutions" },
-      // { name: "SAP Consulting", href: "/services/sap-consulting" },
     ],
   },
   { name: "Tech Talent", href: "/tech-talent" },
@@ -117,6 +135,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null); // For mobile
+  const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null); // For mobile nested
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,6 +147,11 @@ export default function Header() {
 
   const toggleSubmenu = (name) => {
     setActiveSubmenu(activeSubmenu === name ? null : name);
+    setActiveNestedSubmenu(null); // Reset nested when parent changes
+  };
+
+  const toggleNestedSubmenu = (name) => {
+    setActiveNestedSubmenu(activeNestedSubmenu === name ? null : name);
   };
 
   return (
@@ -182,15 +206,37 @@ export default function Header() {
               {/* Desktop Submenu */}
               {item.children && (
                 <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 w-64 z-50">
-                  <div className="bg-[#0B0F19] border border-white/10 rounded-xl shadow-xl overflow-hidden p-2">
+                  <div className="bg-[#0B0F19] border border-white/10 rounded-xl shadow-xl p-2">
                     {item.children.map((child) => (
-                      <Link
-                        key={child.name}
-                        href={child.href}
-                        className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                      >
-                        {child.name}
-                      </Link>
+                      <div key={child.name} className="relative group/sub">
+                        <Link
+                          href={child.href}
+                          className="flex items-center justify-between px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                        >
+                          {child.name}
+                          {child.children && (
+                            <ChevronDownIcon className="w-4 h-4 -rotate-90" />
+                          )}
+                        </Link>
+
+                        {/* Nested Submenu (Fly-out to right) */}
+                        {child.children && (
+                          <div className="absolute left-full top-0 ml-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 transform translate-x-2 group-hover/sub:translate-x-0 w-64 z-50">
+                            <div className="bg-[#0B0F19] border border-white/10 rounded-xl shadow-xl overflow-hidden p-2">
+                              {child.children.map((subChild) => (
+                                <Link
+                                  key={subChild.name}
+                                  href={subChild.href}
+                                  className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {subChild.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -264,14 +310,51 @@ export default function Header() {
                       {item.children && activeSubmenu === item.name && (
                         <div className="pl-4 border-l border-white/10 ml-2 mt-1 space-y-1">
                           {item.children.map((child) => (
-                            <Link
-                              key={child.name}
-                              href={child.href}
-                              className="block px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-md"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {child.name}
-                            </Link>
+                            <div key={child.name}>
+                              <div className="flex items-center justify-between pr-2">
+                                <Link
+                                  href={child.href}
+                                  className="block px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-md flex-1"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {child.name}
+                                </Link>
+                                {child.children && (
+                                  <button
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      toggleNestedSubmenu(child.name);
+                                    }}
+                                    className="p-2 text-gray-400 hover:text-white"
+                                  >
+                                    <ChevronDownIcon
+                                      className={`w-4 h-4 transition-transform ${
+                                        activeNestedSubmenu === child.name
+                                          ? "rotate-180"
+                                          : ""
+                                      }`}
+                                    />
+                                  </button>
+                                )}
+                              </div>
+
+                              {/* Nested Sub-submenu */}
+                              {child.children &&
+                                activeNestedSubmenu === child.name && (
+                                  <div className="pl-4 border-l border-white/5 ml-2 mt-1 space-y-1">
+                                    {child.children.map((subChild) => (
+                                      <Link
+                                        key={subChild.name}
+                                        href={subChild.href}
+                                        className="block px-3 py-2 text-xs text-gray-500 hover:text-white hover:bg-white/5 rounded-md"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                      >
+                                        {subChild.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                            </div>
                           ))}
                         </div>
                       )}

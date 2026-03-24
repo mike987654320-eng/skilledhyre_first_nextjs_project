@@ -7,6 +7,11 @@ import {
   AcademicCapIcon,
   TruckIcon,
   MegaphoneIcon,
+  GlobeAltIcon,
+  HomeIcon,
+  UserGroupIcon,
+  ShieldCheckIcon,
+  CakeIcon,
 } from "@heroicons/react/24/outline";
 import Section from "../../components/common/Section";
 import Card from "../../components/common/Card";
@@ -15,6 +20,48 @@ import CounterItem from "@/components/common/CounterItem";
 // import CounterItem from "../../components/common/CounterItem";
 
 export default function Industries() {
+  const moreIndustries = [
+    {
+      title: "Travel and Tourism",
+      description:
+        "AI-powered trip planning, dynamic pricing, customer personalization, and travel demand forecasting.",
+      icon: GlobeAltIcon, // or MapIcon if you prefer
+      id: "travel-tourism",
+      href: "/industries/travel-tourism",
+    },
+    {
+      title: "Real Estate",
+      description:
+        "Property valuation models, smart recommendations, virtual tours, and market trend analytics.",
+      icon: HomeIcon,
+      id: "real-estate",
+      href: "/industries/real-estate",
+    },
+    {
+      title: "HR and Recruitment",
+      description:
+        "Resume screening, candidate matching, workforce analytics, and AI-driven hiring automation.",
+      icon: UserGroupIcon,
+      id: "hr-recruitment",
+      href: "/industries/hr-recruitment",
+    },
+    {
+      title: "Insurance",
+      description:
+        "Risk assessment, fraud detection, claims automation, and personalized policy recommendations.",
+      icon: ShieldCheckIcon,
+      id: "insurance",
+      href: "/industries/insurance",
+    },
+    {
+      title: "Food & Restaurant Industry",
+      description:
+        "Demand forecasting, menu optimization, customer insights, and delivery/logistics intelligence.",
+      icon: CakeIcon, // or FireIcon / ShoppingBagIcon depending on UI
+      id: "food-restaurant",
+      href: "/industries/food-restaurant",
+    },
+  ];
   const industries = [
     {
       title: "Healthcare",
@@ -72,6 +119,7 @@ export default function Industries() {
       id: "marketing-media",
       href: "/industries/marketing-media",
     },
+    ...moreIndustries,
   ];
 
   return (
